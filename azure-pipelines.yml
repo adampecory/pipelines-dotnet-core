@@ -1,15 +1,16 @@
 #Azure pipeline sample
 
-trigger 
+trigger:
 - main
 
-pool
-- vmImage: 'unbuntu-lastest'
+pool:
+  vmImage: 'unbuntu-lastest'
 
-stages
+stages:
 - stage: Build
-  displaynNme: 'Build Stage'
-  jobs
+  displayName: 'Build Stage'
+  jobs:
   - job: BuildJob
     displayName: 'BuildJob'
-    script: echo 'test'
+    steps:
+    - script: echo 'test'
