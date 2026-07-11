@@ -33,3 +33,6 @@ Privacy information can be found at https://privacy.microsoft.com/en-us/
 
 Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents,
 or trademarks, whether by implication, estoppel or otherwise.
+
+# Status
+[![Build Status](https://occaze.visualstudio.com/learning/_apis/build/status%2Fadampecory.pipelines-dotnet-core?branchName=master)](https://occaze.visualstudio.com/learning/_build/latest?definitionId=3&branchName=master)
