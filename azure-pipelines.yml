@@ -25,7 +25,24 @@ stages:
     displayName: 'Publish App'
     steps:
       - script: echo 'publish app'
+
+
   - job: CreateArtifact
     displayName: 'Create artifact'
     steps:
       - script: echo 'create artifact'
+- stage: GoToRCT
+  displayName: 'Go to RCT'
+  jobs:
+    - job: ManualTask
+      displayName: 'Tache manuelle'
+      pool: server
+      steps:
+      - task: ManualValidation@1
+        inputs:
+          notifyUsers: 'adampecory@gmail.com'
+          onTimeout: 'resume'
+    - job: CopyToEnv
+      displayName: 'Copy to Env'
+      steps:
+        - script: echo 'copy to env'
