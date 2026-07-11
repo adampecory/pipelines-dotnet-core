@@ -14,7 +14,18 @@ stages:
     displayName: 'BuildJob'
     steps:
     - script: echo 'from build'
-  - job: DeployJob
-    displayName: 'Deploy Job'
+  - job: TestJob
+    displayName: 'Test Job'
     steps:
-    - script: echo 'from deploy'
+    - script: echo 'from test'
+- stage: Deploy
+  displayName: 'Deplay App'
+  jobs:
+  - job: Publish
+    displayName: 'Publish App'
+    steps:
+      - script: echo 'publish app'
+  - job: CreateArtifact
+    displayName: :'Create artifact'
+    steps:
+      - script: echop 'create artifact'
