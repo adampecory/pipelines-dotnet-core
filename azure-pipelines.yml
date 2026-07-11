@@ -13,4 +13,8 @@ stages:
   - job: BuildJob
     displayName: 'BuildJob'
     steps:
-    - script: echo 'test'
+    - script: echo 'from build'
+  - job: DeployJob
+    displayName: 'Deploy Job'
+    steps:
+    - script: echo 'from deploy'
