@@ -26,6 +26,6 @@ stages:
     steps:
       - script: echo 'publish app'
   - job: CreateArtifact
-    displayName: :'Create artifact'
+    displayName: 'Create artifact'
     steps:
-      - script: echop 'create artifact'
+      - script: echo 'create artifact'
