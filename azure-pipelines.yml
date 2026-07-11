@@ -4,7 +4,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'unbuntu-lastest'
+  vmImage: 'ubuntu-lastest'
 
 stages:
 - stage: Build
