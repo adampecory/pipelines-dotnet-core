@@ -44,5 +44,6 @@ stages:
           onTimeout: 'resume'
     - job: CopyToEnv
       displayName: 'Copy to Env'
+      dependsOn: ManualTask
       steps:
         - script: echo 'copy to env'
