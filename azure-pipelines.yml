@@ -1,7 +1,7 @@
 #Azure pipeline sample
 
 trigger:
-- main
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
