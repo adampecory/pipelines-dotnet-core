@@ -33,6 +33,7 @@ stages:
       - script: echo 'create artifact'
 - stage: GoToRCT
   displayName: 'Go to RCT'
+  trigger: manual
   jobs:
     - job: ManualTask
       displayName: 'Tache manuelle'
