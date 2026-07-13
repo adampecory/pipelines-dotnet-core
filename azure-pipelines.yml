@@ -4,7 +4,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 stages:
 - stage: Build
@@ -13,38 +13,15 @@ stages:
   - job: BuildJob
     displayName: 'BuildJob'
     steps:
-    - script: echo 'from build'
-  - job: TestJob
-    displayName: 'Test Job'
-    steps:
-    - script: echo 'from test'
-- stage: Deploy
-  displayName: 'Deplay App'
-  jobs:
-  - job: Publish
-    displayName: 'Publish App'
-    steps:
-      - script: echo 'publish app'
+     - task: DotNetCoreCLI@2
+       inputs:
+         command: 'restore'
+         feedsToUse: 'select'
+     - task: DotNetCoreCLI@2
+       inputs:
+         command: 'build'
 
-
-  - job: CreateArtifact
-    displayName: 'Create artifact'
-    steps:
-      - script: echo 'create artifact'
-- stage: GoToRCT
-  displayName: 'Go to RCT'
-  trigger: manual
-  jobs:
-    - job: ManualTask
-      displayName: 'Tache manuelle'
-      pool: server
-      steps:
-      - task: ManualValidation@1
-        inputs:
-          notifyUsers: 'adampecory@gmail.com'
-          onTimeout: 'resume'
-    - job: CopyToEnv
-      displayName: 'Copy to Env'
-      dependsOn: ManualTask
-      steps:
-        - script: echo 'copy to env'
+     - task: DotNetCoreCLI@2
+       inputs:
+         command: 'publish'
+         publishWebProjects: true
